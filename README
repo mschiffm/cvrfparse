@@ -1,0 +1,3 @@
+A python library and CLI tool for extracting data out of a CVRF document.
+For full documentation please see the Cisco Security blog entitled "Tools of 
+the Trade: cvrfparse" at http://blogs.cisco.com/security/tools-of-the-trade-cvrfparse/
