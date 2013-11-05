@@ -5,13 +5,14 @@
 __author__ = "Mike Schiffman"
 __email__ = "mschiffm@cisco.com"
 __credits__ = "William McVey"
-__date__ = "February 2013"
-__revision__ = "0.9b"
+__date__ = "November 2013"
+__revision__ = "0.13"
 __maintainer__ = "Mike Schiffman"
 
 import os
 import sys
 import copy
+import codecs
 import urllib2
 import argparse
 from lxml import etree
@@ -126,10 +127,10 @@ def cvrf_dump(results, strip_ns):
     """
     for key in results:
         if key == "stdout":
-            f = sys.stdout
+            f = codecs.EncodedFile(sys.stdout, input="UTF-8")
         else:
             try:
-                f = open(key, "w")
+                f = codecs.open(key, "w", encoding="UTF-8")
             except IOError as e:
                 sys.exit("{0}: I/O error({1}) \"{2}\": {3}".format(progname, e.errno, key, e.strerror))
         for item in results[key]:
@@ -248,7 +249,7 @@ def main(progname):
     # First things first: parse the document (to ensure it is well-formed XML) to obtain an ElementTree object
     # to pass to the CVRF validator/parser
     try:
-        cvrf_doc = etree.parse(args.file)
+        cvrf_doc = etree.parse(args.file, etree.XMLParser(encoding="utf-8"))
     except IOError:
         sys.exit("{0}: I/O error: \"{1}\" does not exist".format(progname, args.file))
     except etree.XMLSyntaxError as e:
