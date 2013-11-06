@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: cvrfparse
+Version: 0.13
+Summary: CVRF parsing/validation utility
+Home-page: http://pypi.python.org/pypi/cvrfparse
+Author: Mike Schiffman
+Author-email: mschiffm@cisco.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

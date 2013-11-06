@@ -6,7 +6,7 @@ __author__ = "Mike Schiffman"
 __email__ = "mschiffm@cisco.com"
 __credits__ = "William McVey"
 __date__ = "November 2013"
-__revision__ = "1.0"
+__revision__ = "0.13"
 __maintainer__ = "Mike Schiffman"
 
 import os
@@ -207,8 +207,7 @@ def post_process_arglist(arg, namespace, valid_args):
     return parsables
 
 
-def main(progname = None):
-    progname = progname if progname else os.path.basename(sys.argv[0])
+def main(progname):
     parser = argparse.ArgumentParser(formatter_class=NonDupBracketFormatter,
                                      description="Validate/parse a CVRF 1.1 document and emit user-specified bits.")
     parser.add_argument("-f", "--file", required="True", action="store",
