@@ -1,3 +1,0 @@
-[console_scripts]
-cvrfparse = cvrfparse.cvrfparse:main
-
