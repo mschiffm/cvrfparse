@@ -10,3 +10,5 @@ You can install cvrfparse from source or using pip:
 ```
 pip install cvrfparse
 ```
+
+Visit the [CVRF GitHub Website](http://cvrf.github.io/) for more information about CVRF and future work.
